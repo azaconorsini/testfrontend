@@ -1,0 +1,416 @@
+@charset "UTF-8";
+@import '_mixins.less';
+@import '_variables.less';
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font: 400 14px/20px @font-family-base;
+	color: @color-gray-darken;
+	background-color: @color-gray-extralight;
+}
+a {
+	.prefixed(transition, all .25s ease-in-out);
+	&:hover {
+		text-decoration: none;
+	}
+}
+#header-container {
+	width: 100%;
+	height: 80px;
+	display: block;
+	position: relative;
+	background-color: @color-marvel-head;
+	overflow: hidden;
+	z-index: 999;
+	.prefixed(box-shadow, 0 0 20px rgba(0,0,0,0.7));
+
+	.container-wrapper {
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		color: #f8f8f8;
+		.prefixed(transform, translateY(-50%));
+	}
+	.brand-image {
+		width: 150px; 
+		display: block;
+		background-color: green;
+	}
+	.search-form {
+		background-color: #f8f8f8;
+		height: 50px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		.prefixed(border-radius, 3px);
+		input.form-control {
+			height: 50px;
+			background-color: transparent;
+			border: none;
+			border-radius: 0; 
+			box-shadow: none;
+			font-size: @font-size-medium;
+			outline: none;
+			&::-webkit-input-placeholder{
+				color: #bbb;
+			}
+			&::-moz-placeholder {
+				color: #bbb;	
+			}
+			&:-moz-placeholder {
+				color: #bbb;	
+			}
+		}
+		button.btn.btn-default {
+			height: 50px;
+			font-size: (@font-size-large + 2);
+			color: #bbb;
+			background-color: transparent;
+			border: none;
+			outline: none;
+			box-shadow: none;
+			.prefixed(transition, color .35s ease);
+			&:hover {
+				color: @color-gray-dark;
+			}
+		}
+	}
+}
+
+#main-container {
+	width: 100%;
+	min-height: 100%;
+	display: block;
+	position: relative;
+	margin: auto;
+	overflow: hidden;
+	
+	//== Altura máxima de columnas
+	.container-fluid .flexi-row > [class*="col-"] {
+		margin-bottom: -9999px;
+		padding-bottom: 9999px;
+	}
+
+	//== Encabezado para secciones
+	.heading {
+		display: block;
+		padding-bottom: 20px;
+
+		h3 {
+			font-size: 28px;
+			font-family: @font-family-other;
+			font-weight: 700;
+			padding-top: 4px;
+
+			&:before {
+				content: "";
+				width: 40px;
+				height: 40px;
+				display: block;
+				float: left;
+				margin-right: 10px;
+				margin-top: -5px;
+			}
+			&.characters:before {
+				background: url('@{icon-path}/characters.png') no-repeat center center; 
+			}
+			&.favourites:before {
+				background: url('@{icon-path}/btn-favourites-primary.png') no-repeat center center; 	
+			}
+		}
+	}
+
+
+	// Sección o columna izquierda
+	.characters-col {
+		padding-top: 15px;
+		padding-bottom: 15px; 
+		
+		// Barra contenedor de titulo y select
+		.characters-bar {
+			padding-bottom: 15px;
+
+			select.form-control {
+				height: 60px;
+				font-size: @font-size-medium;
+				border-color: #dcdcdc;
+				box-shadow: none;
+				background: url('@{icon-path}/btn_arrow_down.png') no-repeat right #fff;
+				.prefixed(appearance, none);
+				.prefixed(border-radius, 0);
+				&:focus { 
+					outline: none;
+				}
+			}
+		}
+		// Sección de comics
+		.characters-container {
+			width: 100%;
+			height: 100%;
+			padding-bottom: 15px;
+			position: relative;
+			overflow: hidden;
+
+			[class*="col-"] {
+				padding-right: 7.5px;
+				padding-left: 7.5px;
+				margin-bottom: 15px;
+			}
+
+			.characters-gridbox {
+				height: 100%;
+				background-color: #fff;
+				display: block;
+				.prefixed(border-radius; 3px);
+
+				.characters-hidden {
+					width: 100%;
+					display: block;
+					overflow: hidden;
+
+					figure {
+						width: 50%;
+						display: block;
+						margin: 0;
+						padding: 0 5% 0 0;
+						float: left;
+						box-sizing: border-box; 
+
+						img.img-responsive {
+							.prefixed(box-shadow, 4px 4px 10px rgba(0,0,0,.3));
+						}
+					}
+					.characters-description {
+						width: 50%;
+						display: block;
+						float: left;
+
+						h4 {
+							font-family: @font-family-other;
+							font-weight: bold;
+							text-transform: uppercase;
+							margin: 0 0 10px 0;
+						}
+						p {
+							color: @color-gray;
+							margin-bottom: 12px;
+						}
+						.btn-more {
+							height: 40px;
+							padding-top: 10px;
+							background-color: @color-marvel-base;
+							border-radius: 0;
+							border: none;
+							text-transform: uppercase;
+							color: #fff;
+							font-weight: bold;
+							&:hover,
+							&:hover:focus {
+								background-color: @color-marvel-head;
+							}
+						}
+					}
+				}
+				.characters-related {
+					display: block;
+					overflow: hidden;
+					padding-top: 15px;
+
+					p {
+						font-size: @font-size-large;
+						font-weight: 900;
+						color: @color-marvel-text;
+					}
+					ul {
+						li {
+							width: 50%;
+							display: block;
+							float: left;
+							box-sizing: border-box;
+
+							a {
+								display: inline-block;
+								padding: 2px 0;
+								color: @color-marvel-text;
+
+								&:before {
+									content: "";
+									width: 0;
+									height: 10px;
+									display: inline-block;
+									.prefixed(transition, all 0.35s ease);
+									background: url('@{icon-path}/link-arrow.png') yellow center no-repeat;
+								}
+
+								&:hover {
+									color: @color-marvel-base;
+									&:before {
+										width: 20px;
+										margin-right: 5px;
+									}
+								}
+							}
+
+							&:nth-child(even) {
+								padding-left: 10px;
+							}
+							&:nth-child(odd) {
+								padding-right: 10px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Barra lateral - comics favoritos
+
+	.favourites-col {
+		padding-top: 5px;
+
+		.cover-col {
+			margin-bottom: 30px;
+
+			.cover-container {
+				width: 80%;
+				height: auto;
+				display: block;
+				position: relative;
+				margin: 0 auto;
+				z-index: 100;
+
+				.cover-title {
+					font-family: @font-family-other;
+					font-weight: bold;
+					text-align: center;
+					padding-top: 5px;
+					line-height: 24px;
+
+					a {
+						color: inherit;
+						&:hover {
+							color: @color-marvel-base;
+						}
+					}
+				}
+				.cover-close {
+					width: 35px;
+					height: 35px;
+					display: block;
+					position: absolute;
+					top: -10px;
+					right: -10px;
+					z-index: 101;
+					a {
+						img {
+							.prefixed(transform, rotate(360deg));
+							.prefixed(transition, all 1s ease);
+							&:hover {
+								.prefixed(transform, rotate(-360deg));
+							}
+						}
+					}
+				}
+			}
+		}
+	} 
+
+	// Paginación 
+
+	ul.pagination {
+		padding: 0;
+		margin: 0 auto 20px auto;
+		li {
+			a {
+				margin-right: 5px;
+				margin-left: 5px;
+				font-weight: bold;
+				color: #bbb;
+				padding: 10px 20px; 
+				background: #fff;
+				border: none;
+				.prefixed(box-shadow, 0 0 4px rgba(0,0,0,.2));
+				.prefixed(border-radius, 0);
+
+				&:hover {
+					background: #fff;
+					color: @color-gray-dark;
+				}
+			}
+			&.active {
+				a {
+					background-color: lighten(#fcfcfc, 8%);
+					color: @color-gray-dark;
+					border-color: transparent;
+					box-shadow: none; 
+				}
+			}
+		}
+	}
+	
+	.bg-gray {
+		background-color: @color-marvel-gray;
+	}
+}
+
+#footer-container {
+	background: @color-marvel-head;
+	width: 100%;
+	height: 100px;
+	padding: 15px 0;
+	box-sizing: border-box;
+	position: relative;
+
+	.footer-text {
+		width: 100%;
+		position: absolute;
+		display: block;
+		top: 50%;
+		left: 50%;
+		.prefixed(transform, translate(-50%,-50%));
+
+		p {
+			display: block;
+			margin: 0;
+			padding-top: 15px;
+			color: #fff;
+
+			&:before {
+				content: "";
+				width: 51px;
+				height: 51px;
+				display: block;
+				float: right;
+				margin-top: -15px;
+				background: url('@{img-path}/grability-logo.png') no-repeat center;
+			}
+		} 
+	}
+}
+
+.icon {
+	width: 40px;
+	height: 40px;
+	display: block;
+	float: left;
+	margin-right: 10px;
+	&.icon-man {
+		background: url('@{icon-path}/characters.png') no-repeat center center; 
+	}
+}
+.flexi-container {
+	width: 100%;
+	padding: 15px;
+	display: block;
+	overflow: hidden;
+}
+// Configuración para dispositivos móviles
+
+@import '_mobile.less';
+

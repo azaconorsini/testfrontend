@@ -1,0 +1,71 @@
+//  ====================================================== 
+//	MIXINS LESS
+
+//	Author: Johan J. Azacón O.
+//	Contact: (+58)4128605556 - j.azacon@gmail.com
+//	Profile: https://www.linkedin.com/in/johanazacon/
+//	=======================================================
+
+// Propiedades con prefijos
+
+.prefixed(@property, @value){
+	& when (@webkit = true) {
+		-webkit-@{property}: @value;
+	}
+	& when (@moz = true) {
+		-moz-@{property}: @value;
+	}
+	& when (@ms = true) {
+		-ms-@{property}: @value;
+	}
+	& when (@o = true) {
+		-o-@{property}: @value
+	}
+	@{property}: @value;
+}
+@webkit: true;
+@moz:    true;
+@ms:     false;
+@o:      false;
+
+// Opacidad de elementos
+
+.opacity(@value){
+	opacity: @value;
+	@filter: @value*100;
+	filter: "alpha(opacity=@{filter})";
+}
+
+// Degradados 
+
+.bg-gradient(@origen, @inicio, @final) {
+	background-color: @inicio;
+	background-image: -webkit-linear-gradient(@origen, @inicio, @final);
+	background-image: -moz-linear-gradient(@origen, @inicio, @final);
+	background-image: -ms-linear-gradient(@origen, @inicio, @final);
+	background-image: -o-linear-gradient(@origen, @inicio, @final); 
+}
+
+// Transiciones
+
+.transition(@property: all, @duracion: 0.35s) {
+	.prefixed(transition, @property @duracion);
+}
+
+//  Caja con sombras 
+
+.box-shadow(@x: 0, @y: 2px, @blur: 5px, @alpha: 0.5 ) {
+	.prefixed(box-shadow, @x @y @blur rgba(0,0,0,@alpha));
+}
+
+.button-variant(@color; @bakground){
+	color: @color;
+	background-color: @bakground;
+	.transition();
+	&:hover, 
+	&:focus, 
+	&:active {
+		color: @color;
+		background-color: darken(@bakground, 10%);
+	} 
+}

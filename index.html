@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Proyecto seleccion tecnica</title>
+	<link rel="stylesheet" href="content/css/bootstrap.min.css">
+	<link rel="stylesheet" href="content/css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i,800,800i,900,900i|Open+Sans:400,400i,700,700i" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
+</head>
+<body>
+	<header id="header-container">
+		<div class="container-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 col-sm-2">
+						<a href="" class="brand-image">
+							<img src="content/img/brand-marvel.jpg" alt="Marvel Studios" class="img-responsive">
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-7 col-sm-offset-3 col-md-6 col-md-offset-1">
+						<div class="search-form">
+							<form action="" id="search-form" method="" autocomplete="off">
+								<div class="input-group">
+									<input type="text" name="search" id="search" class="form-control" placeholder="Search character...">
+									<div class="input-group-btn">
+										<button type="button" id="button-search" class="btn btn-default">
+											<span class="glyphicon glyphicon-search"></span>
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header> 
+	<!-- Contenedor principal -->
+	<div id="main-container">
+		<div class="container-fluid">
+			<div class="row flexi-row">
+				<div class="characters-col col-sm-12 col-md-8 col-lg-9">
+					<div class="characters-bar row">
+						<header class="heading col-sm-7 col-md-6">
+							<h3 class="characters">Characters</h3>
+						</header>
+						<div class="col-sm-5 col-md-4 col-md-offset-2">
+							<select name="characters-select" id="characters-list" class="form-control">
+								<option selected="selected">Shor by</option>
+								<option value="spi">Spider Man</option>
+								<option value="bla">Black Widow</option>
+								<option value="cap">Captain America</option>
+								<option value="wol">Wolverine</option>
+								<option value="dar">Daredevil</option>
+								<option value="luk">Luke Cage</option>
+								<option value="tho">Thor</option>
+								<option value="cpm">Captain Marvel</option>
+								<option value="hul">Hulk</option>
+							</select>
+						</div>
+					</div>
+					<!-- Lista de comics -->
+					<section class="characters-container">
+						<div class="row col-eq">
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="characters-gridbox">
+									<div class="flexi-container">
+										<div class="characters-hidden">
+											<figure>
+												<img src="content/img/comics/spider-man.jpg" alt="Spider-Man" class="img-responsive img-circle">
+											</figure>
+											<div class="characters-description">
+												<h4>Spider Man</h4>
+												<p>Bitten by a radiaactive spider, hight school student Peter Parker gained the speed, strength and powers of a spider. Adopting the name Spider-Man, Peter hoped to...</p>
+												<a href="http://" class="btn btn-more">View more</a>
+											</div>	 
+										</div>
+										<div class="characters-related">
+											<p>Related comics</p>
+											<ul class="related-list list-unstyled">
+												<li><a href="">Spiderman/Deadpool #11</a></li>
+												<li><a href="">The Clone Conspiracy #2</a></li>
+												<li><a href="">Spidey #12</a></li>
+												<li><a href="">Avengers #1</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="clearfix col-md"></div> -->
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="characters-gridbox">
+									<div class="flexi-container">
+										<div class="characters-hidden">
+											<figure>
+												<img src="content/img/comics/black-widow.jpg" alt="Black Widow" class="img-responsive img-circle">
+											</figure>
+											<div class="characters-description">
+												<h4>Black Widow</h4>
+												<p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibedum bibedum. Cras quis nulla commodo, aliquam lectus sed, blandit augue..</p>
+												<a href="http://" class="btn btn-more">View more</a>
+											</div>	 
+										</div>
+										<div class="characters-related">
+											<p>Related comics</p>
+											<ul class="related-list list-unstyled">
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="characters-gridbox">
+									<div class="flexi-container">
+										<div class="characters-hidden">
+											<figure>
+												<img src="content/img/comics/captain-america.jpg" alt="Captain America" class="img-responsive img-circle">
+											</figure>
+											<div class="characters-description">
+												<h4>Captain America</h4>
+												<p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibedum bibedum. Cras quis nulla commodo, aliquam lectus sed, blandit augue..</p>
+												<a href="http://" class="btn btn-more">View more</a>
+											</div>	 
+										</div>
+										<div class="characters-related">
+											<p>Related comics</p>
+											<ul class="related-list list-unstyled">
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="characters-gridbox">
+									<div class="flexi-container">
+										<div class="characters-hidden">
+											<figure>
+												<img src="content/img/comics/wolverine.jpg" alt="Wolverine" class="img-responsive img-circle">
+											</figure>
+											<div class="characters-description">
+												<h4>Wolverine</h4>
+												<p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibedum bibedum. Cras quis nulla commodo, aliquam lectus sed, blandit augue..</p>
+												<a href="http://" class="btn btn-more">View more</a>
+											</div>	 
+										</div>
+										<div class="characters-related">
+											<p>Related comics</p>
+											<ul class="related-list list-unstyled">
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="characters-gridbox">
+									<div class="flexi-container">
+										<div class="characters-hidden">
+											<figure>
+												<img src="content/img/comics/daredevil.jpg" alt="Daredevil" class="img-responsive img-circle">
+											</figure>
+											<div class="characters-description">
+												<h4>Daredevil</h4>
+												<p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibedum bibedum. Cras quis nulla commodo, aliquam lectus sed, blandit augue..</p>
+												<a href="http://" class="btn btn-more">View more</a>
+											</div>	 
+										</div>
+										<div class="characters-related">
+											<p>Related comics</p>
+											<ul class="related-list list-unstyled">
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="characters-gridbox">
+									<div class="flexi-container">
+										<div class="characters-hidden">
+											<figure>
+												<img src="content/img/comics/luke-cage.jpg" alt="Luke Cage" class="img-responsive img-circle">
+											</figure>
+											<div class="characters-description">
+												<h4>Luke Cage</h4>
+												<p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibedum bibedum. Cras quis nulla commodo, aliquam lectus sed, blandit augue..</p>
+												<a href="http://" class="btn btn-more">View more</a>
+											</div>	 
+										</div>
+										<div class="characters-related">
+											<p>Related comics</p>
+											<ul class="related-list list-unstyled">
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="characters-gridbox">
+									<div class="flexi-container">
+										<div class="characters-hidden">
+											<figure>
+												<img src="content/img/comics/thor.jpg" alt="Thor" class="img-responsive img-circle">
+											</figure>
+											<div class="characters-description">
+												<h4>Thor</h4>
+												<p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibedum bibedum. Cras quis nulla commodo, aliquam lectus sed, blandit augue..</p>
+												<a href="http://" class="btn btn-more">View more</a>
+											</div>	 
+										</div>
+										<div class="characters-related">
+											<p>Related comics</p>
+											<ul class="related-list list-unstyled">
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="characters-gridbox">
+									<div class="flexi-container">
+										<div class="characters-hidden">
+											<figure>
+												<img src="content/img/comics/ultron.jpg" alt="Ultron" class="img-responsive img-circle">
+											</figure>
+											<div class="characters-description">
+												<h4>Ultron</h4>
+												<p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibedum bibedum. Cras quis nulla commodo, aliquam lectus sed, blandit augue..</p>
+												<a href="http://" class="btn btn-more">View more</a>
+											</div>	 
+										</div>
+										<div class="characters-related">
+											<p>Related comics</p>
+											<ul class="related-list list-unstyled">
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="characters-gridbox">
+									<div class="flexi-container">
+										<div class="characters-hidden">
+											<figure>
+												<img src="content/img/comics/captain-marvel.jpg" alt="Captain Marvel" class="img-responsive img-circle">
+											</figure>
+											<div class="characters-description">
+												<h4>Captain Marvel</h4>
+												<p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibedum bibedum. Cras quis nulla commodo, aliquam lectus sed, blandit augue..</p>
+												<a href="http://" class="btn btn-more">View more</a>
+											</div>	 
+										</div>
+										<div class="characters-related">
+											<p>Related comics</p>
+											<ul class="related-list list-unstyled">
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="characters-gridbox">
+									<div class="flexi-container">
+										<div class="characters-hidden">
+											<figure>
+												<img src="content/img/comics/hulk.jpg" alt="Hulk" class="img-responsive img-circle">
+											</figure>
+											<div class="characters-description">
+												<h4>Hulk</h4>
+												<p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibedum bibedum. Cras quis nulla commodo, aliquam lectus sed, blandit augue..</p>
+												<a href="http://" class="btn btn-more">View more</a>
+											</div>	 
+										</div>
+										<div class="characters-related">
+											<p>Related comics</p>
+											<ul class="related-list list-unstyled">
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+												<li><a href="">Related comic name two lines</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- Paginación -->
+					<div class="text-center center-block">
+						<ul class="pagination pagination-lg">
+							<li class="disabled"><a href=""><img src="content/fonts/btn_arrow_left.png" alt=""></a></li>
+							<li class="active"><a href="">1</a></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">4</a></li>
+							<li><a href="">5</a></li>
+							<li><a href="">...</a></li>
+							<li><a href=""><img src="content/fonts/btn_arrow_right.png" alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+				<aside class="favourites-col col-sm-12 col-md-4 col-lg-3 bg-gray" >
+					<header class="heading">
+						<h3 class="favourites">My favourites</h3>
+					</header>
+					<div class="row">
+						<div class="col-xs-6 col-sm-4 col-md-12 cover-col">
+							<div class="cover-container">
+								<span class="cover-close">
+									<a href="" class="" id=""><img src="content/fonts/btn-delete.png" alt=""></a>
+								</span>
+								<img src="content/img/covers/amazing-spider-man.jpg" alt="Amazing Spider-Man" class="img-responsive">
+								<h4 class="cover-title">
+									<a href="">Comic Tile mauris non tempor quam, et lacinia.</a>
+								</h4>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-4 col-md-12 cover-col">
+							<div class="cover-container">
+								<span class="cover-close">
+									<a href="" class="" id=""><img src="content/fonts/btn-delete.png" alt=""></a>
+								</span>
+								<img src="content/img/covers/the-avengers.jpg" alt="The Avengers" class="img-responsive">
+								<h4 class="cover-title">
+									<a href="">Comic Tile mauris non tempor quam, et lacinia.</a>
+								</h4>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-4 col-md-12 cover-col">
+							<div class="cover-container">
+								<span class="cover-close">
+									<a href="" class="" id=""><img src="content/fonts/btn-delete.png" alt=""></a>
+								</span>
+								<img src="content/img/covers/civil-wars.jpg" alt="Civil Wars" class="img-responsive">
+								<h4 class="cover-title">
+									<a href="">Comic Tile mauris non tempor quam, et lacinia.</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</div>
+	<footer id="footer-container">
+		<div class="footer-text">
+			<div class="container-fluid">
+				<p>Grability 2016 - Todos los derechos reservados</p>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="content/js/bootstrap.min.js"></script>
+	<script src="content/js/bootstrap-colequalizer.js"></script>
+	<script src="content/js/main.js"></script>
+</body>
+</html>
